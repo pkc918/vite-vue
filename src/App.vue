@@ -1,18 +1,16 @@
 <template>
   <div>
-    hi
-    <XiaoPan/>
+    <div>
+      导航栏 | <router-link to="/">XiaoPan</router-link> |
+      <router-link to="/xxx">XiaoPan2</router-link>
+    </div>
+    <hr />
+    <router-view></router-view>
   </div>
-  
 </template>
 
 <script>
-import XiaoPan from './components/XiaoPan.vue'
-
 export default {
   name: 'App',
-  components: {
-    XiaoPan
-  }
-}
+};
 </script>
