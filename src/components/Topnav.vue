@@ -1,26 +1,36 @@
 <template>
   <div class="topnav">
-    <div class="logo">
-      <router-link to="/">轱辘UI</router-link>
-    </div>
+    <div class="logo"> 轱辘UI </div>
     <ul class="menu">
       <li>文档</li>
       <li>捐款</li>
     </ul>
+    <span class="toggleAside"  @click="handleHidden"></span>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { inject, Ref } from 'vue';
 export default {
-  
-}
+  setup() {
+    const menuVisible = inject<Ref<boolean>>('menuVisible');
+    const handleHidden = () => {
+      menuVisible.value = !menuVisible.value;
+    };
+    return { handleHidden };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .topnav {
   background: pink;
   display: flex;
-  padding: 16px 0;
+  padding: 16px;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -32,6 +42,21 @@ export default {
     > li {
       margin: 0 1em;
     }
+  }
+  > .toggleAside {
+    display: none;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 500px) {
+    > .menu {display: none;}
+    > .logo {margin: 0 auto;}
+    > .toggleAside {display: inline-block;}
   }
 }
 </style>
