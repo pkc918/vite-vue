@@ -39,23 +39,30 @@ export default {
 </script>
 
 <style lang="scss">
-aside {
-  background-color: lightblue;
-  width: 150px;
-  padding: 16px;
-  > h2 {
-    margin-bottom: 4px;
-  }
-  > ol {
-    > li {
-      padding: 4px 0;
+.content{
+  display: flex;
+  > aside {
+    background-color: lightblue;
+    width: 150px;
+    padding: 16px;
+    > h2 {
+      margin-bottom: 4px;
+    }
+    > ol {
+      > li {
+        padding: 4px 0;
+      }
+    }
+    @media (max-width: 500px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 70px;
     }
   }
-  @media (max-width: 500px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 70px;
+  > main{
+    width: 100%;
+    background-color: #87e08e;
   }
 }
 </style>
