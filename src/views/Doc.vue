@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="docMain">
     <Topnav />
     <div class="content">
       <aside v-show="menuVisible">
@@ -39,12 +39,22 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  height: 100%;
+  > div {
+    height: 100%;
+    > .docMain {
+      height: 100%;
+    }
+  }
+}
 .content{
   display: flex;
+  height: 100%;
   > aside {
-    background-color: lightblue;
     width: 150px;
     padding: 16px;
+    background-color: pink;
     > h2 {
       margin-bottom: 4px;
     }
@@ -62,7 +72,11 @@ export default {
   }
   > main{
     width: 100%;
-    background-color: #87e08e;
+    padding: 10px;
+    background-color: #88df8e;
+    text-align: left;
+    font-size: 24px;
+    overflow-y: auto;
   }
 }
 </style>

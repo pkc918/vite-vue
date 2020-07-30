@@ -24,14 +24,16 @@ export default {
 
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: relative;
   z-index: 10;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #e9e9e9;
   > .logo {
+    font-size: 24px;
+    font-weight: 600;
     max-width: 6em;
     margin-right: auto;
   }
@@ -52,6 +54,7 @@ export default {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    background: url(/public/img/unfold.png) no-repeat center;
   }
   @media (max-width: 500px) {
     > .menu {display: none;}

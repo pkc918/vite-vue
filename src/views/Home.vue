@@ -8,7 +8,7 @@
         <h2>基于 Vue 3 和 TypeScript 的 UI 框架</h2>
         <div class="links">
           <a href="http://github.com">GitHub</a>
-          <router-link to="/doc">开始</router-link>
+          <router-link to="/doc">起步</router-link>
         </div>
       </div>
     </div>
@@ -33,18 +33,17 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: lightgreen;
     .links {
       padding-top: 20px;
       a {
-        margin: 0 8px;
-        background-color: #fff;
-        display: inline-block;
         $h: 28px;
-        height: $h;
+        display: inline-block;
+        margin: 0 20px;
+        padding: 8px 20px;
+        border-radius: $h;
+        border: 1px solid #4fc08d;
+        background-color: #f6f6f6;
         line-height: $h;
-        border-radius: $h/2;
-        padding: 0 8px;
         font-weight: 600;
       }
     }
