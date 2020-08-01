@@ -1,104 +1,12 @@
 <template>
   <div>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
-    <p>switch组件</p>
+    <Switch />
   </div>
 </template>
+
+<script lang="ts">
+import Switch from '../lib/Switch.vue'
+export default {
+  components: { Switch }
+}
+</script>
