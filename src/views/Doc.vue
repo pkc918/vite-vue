@@ -27,12 +27,12 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue';
-import Topnav from '../components/Topnav.vue';
+import { inject, Ref } from "vue";
+import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
   setup() {
-    const menuVisible = inject<Ref<boolean>>('menuVisible');
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     return { menuVisible };
   },
 };
@@ -48,13 +48,14 @@ export default {
     }
   }
 }
-.content{
+.content {
   display: flex;
   height: 100%;
   > aside {
     width: 150px;
     padding: 16px;
     background-color: pink;
+    z-index: 1;
     > h2 {
       margin-bottom: 4px;
     }
@@ -70,7 +71,7 @@ export default {
       padding-top: 70px;
     }
   }
-  > main{
+  > main {
     width: 100%;
     padding: 10px;
     background-color: #88df8e;

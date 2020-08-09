@@ -27,10 +27,11 @@ export default {
   display: flex;
   padding: 16px;
   position: relative;
-  z-index: 10;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #e9e9e9;
+  background-color: #fff;
+  z-index: 10;
   > .logo {
     font-size: 24px;
     font-weight: 600;
