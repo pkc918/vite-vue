@@ -1,6 +1,6 @@
 <template>
-  <div class="switch">
-    <button :class="{ checked: value }" @click="toggleChecked"><span></span></button>
+  <div class="gulu-switch">
+    <button :class="{ 'gulu-checked': value }" @click="toggleChecked"><span></span></button>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
   $h: 22px;
   $h2: $h - 4px;
-  .switch{
+  .gulu-switch{
     > button{
       height: $h;
       width: $h*2;
@@ -41,13 +41,13 @@ export default {
         border-radius: $h2 / 2;
         transition: left 0.3s;
       }
-      &.checked{
+      &.gulu-checked{
         background: #1890ff;
         > span{
           left: calc(100% - #{$h2} - 2px);
         }
       }
-      &.checked:active{
+      &.gulu-checked:active{
         > span{
           width: $h2 + 4px;
           margin-left: -4px;
