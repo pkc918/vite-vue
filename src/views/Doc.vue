@@ -74,7 +74,7 @@ export default {
   > main {
     width: 100%;
     padding: 10px;
-    background-color: #88df8e;
+    background-color: #fff;
     text-align: left;
     font-size: 24px;
     overflow-y: auto;
