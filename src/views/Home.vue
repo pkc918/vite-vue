@@ -7,7 +7,7 @@
         <h1>轱辘UI</h1>
         <h2>基于 Vue 3 和 TypeScript 的 UI 框架</h2>
         <div class="links">
-          <a href="http://github.com">GitHub</a>
+          <a href="https://github.com/XiaoPan-Struggle/vite-vue">GitHub</a>
           <router-link to="/doc">起步</router-link>
         </div>
       </div>
