@@ -1,18 +1,30 @@
 <template>
+  <div>Button 示列</div>
+  <h3>示例1</h3>
   <div>
-    <div>Button 示列</div>
-    <h1>示例1</h1>
+    <Button>默认</Button>
+    <Button theme="button">按钮</Button>
+    <Button theme="link">链接</Button>
+    <Button theme="text">文本</Button>
+  </div>
+  <h3>示例2</h3>
+  <div>
     <div>
-      <Button>默认</Button>
-      <Button theme="button">按钮</Button>
-      <Button theme="link">链接</Button>
-      <Button theme="text">文本</Button>
+      <Button theme="button" size="big">大</Button>
+      <Button theme="button">默认</Button>
+      <Button theme="button" size="small">小</Button>
     </div>
-    <h1>示例2</h1>
+    
     <div>
-      <Button size="big">大</Button>
-      <Button>默认</Button>
-      <Button size="small">小</Button>
+      <Button theme="link" size="big">大</Button>
+      <Button theme="link">默认</Button>
+      <Button theme="link" size="small">小</Button>
+    </div>
+
+    <div>
+      <Button theme="text" size="big">大</Button>
+      <Button theme="text">默认</Button>
+      <Button theme="text" size="small">小</Button>
     </div>
   </div>
 </template>
