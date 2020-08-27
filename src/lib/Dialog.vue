@@ -1,16 +1,16 @@
 <template>
 <template v-if="visible">
-  <div class="gulu-dialog-overlay"></div>
+  <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
   <div class="gulu-dialog-wrapper">
     <div class="gulu-dialog">
-      <header>提示<span class="gulu-dialog-close"></span></header>
+      <header>提示<span @click="close" class="gulu-dialog-close"></span></header>
       <main>
         <p>第一行</p>
         <p>第二行</p>
       </main>
       <footer>
-        <Button>OK</Button>
-        <Button>Cancel</Button>
+        <Button @click="ok">OK</Button>
+        <Button @click="cancel">Cancel</Button>
       </footer>
     </div>
   </div>
@@ -25,9 +25,45 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeonClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
   },
   components: {
     Button,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("updata:visible", false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeonClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      // 简写： props.ok?.() !== false
+      if (props.ok && props.ok() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit("cancel");
+      close();
+    };
+    return {
+      close,
+      onClickOverlay,
+      ok,
+      cancel,
+    };
   },
 };
 </script>
@@ -40,8 +76,8 @@ $border-color: #d9d9d9;
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
-  min-width: 30em;
-  max-width: 100%;
+  min-width: 15em;
+  max-width: 90%;
 
   &-overlay {
     position: fixed;

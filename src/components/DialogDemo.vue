@@ -3,7 +3,8 @@
   <div>Dialog 示例</div>
   <h3>实列1</h3>
   <Button theme="text" style='margin-top:10px; color:#409eff;' @click="toggleVisible">点击打开dialog</Button>
-  <Dialog :visible="x"></Dialog>
+  <Dialog v-model:visible="x" @updata:visible="x = $event" :closeonClickOverlay="false" :ok="f1" :cancel="f2">
+  </Dialog>
 </div>
 </template>
 
@@ -23,9 +24,15 @@ export default {
     const toggleVisible = () => {
       x.value = !x.value;
     };
+    const f1 = () => {
+      return false;
+    };
+    const f2 = () => {};
     return {
       x,
       toggleVisible,
+      f1,
+      f2,
     };
   },
 };
