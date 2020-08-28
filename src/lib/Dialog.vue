@@ -6,14 +6,13 @@
       <div class="gulu-dialog">
         <header>
           <slot name="title" />
-          <span @click="close" class="gulu-dialog-close">
-          </span>
+          <span @click="close" class="gulu-dialog-close"> </span>
         </header>
         <main>
           <slot name="content" />
         </main>
         <footer>
-          <Button @click="ok">OK</Button>
+          <Button level="main" @click="ok">OK</Button>
           <Button @click="cancel">Cancel</Button>
         </footer>
       </div>
@@ -23,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import Button from "./Button.vue";
+import Button from './Button.vue';
 export default {
   props: {
     visible: {
@@ -46,7 +45,7 @@ export default {
   },
   setup(props, context) {
     const close = () => {
-      context.emit("updata:visible", false);
+      context.emit('update:visible', false);
     };
     const onClickOverlay = () => {
       if (props.closeonClickOverlay) {
@@ -60,7 +59,7 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit("cancel");
+      props.cancel?.();
       close();
     };
     return {
@@ -130,7 +129,7 @@ $border-color: #d9d9d9;
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 1px;
       background: black;
