@@ -1,23 +1,28 @@
 <template>
-  <div class="topnav">
-    <div class="logo"> 轱辘UI </div>
-    <ul class="menu">
-      <li>文档</li>
-      <li>捐款</li>
-    </ul>
-    <span class="toggleAside"  @click="handleHidden"></span>
-  </div>
+<div class="topnav">
+  <div class="logo"> 轱辘UI </div>
+  <ul class="menu">
+    <li>文档</li>
+    <li>捐款</li>
+  </ul>
+  <span class="toggleAside" @click="handleHidden"></span>
+</div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue';
+import {
+  inject,
+  Ref
+} from "vue";
 export default {
   setup() {
-    const menuVisible = inject<Ref<boolean>>('menuVisible');
+    const menuVisible = inject < Ref < boolean >> ("menuVisible");
     const handleHidden = () => {
       menuVisible.value = !menuVisible.value;
     };
-    return { handleHidden };
+    return {
+      handleHidden
+    };
   },
 };
 </script>
@@ -32,21 +37,25 @@ export default {
   border-bottom: 1px solid #e9e9e9;
   background-color: #fff;
   z-index: 10;
-  > .logo {
+
+  >.logo {
     font-size: 24px;
     font-weight: 600;
     max-width: 6em;
     margin-right: auto;
   }
-  > .menu {
+
+  >.menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    > li {
+
+    >li {
       margin: 0 1em;
     }
   }
-  > .toggleAside {
+
+  >.toggleAside {
     display: none;
     width: 24px;
     height: 24px;
@@ -55,12 +64,21 @@ export default {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: url(/public/img/unfold.png) no-repeat center;
+    background: url(/img/unfold.png) no-repeat center;
   }
+
   @media (max-width: 500px) {
-    > .menu {display: none;}
-    > .logo {margin: 0 auto;}
-    > .toggleAside {display: inline-block;}
+    >.menu {
+      display: none;
+    }
+
+    >.logo {
+      margin: 0 auto;
+    }
+
+    >.toggleAside {
+      display: inline-block;
+    }
   }
 }
 </style>
