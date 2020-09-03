@@ -17,7 +17,7 @@ import {
   computed,
   ref,
   onMounted,
-  onUpdated
+  watchEffect
 } from "vue";
 export default {
   props: {
@@ -43,8 +43,9 @@ export default {
       const left = tabLeft - navLeft;
       indicator.value.style.left = left + "px";
     };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      watchEffect(x);
+    });
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
