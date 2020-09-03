@@ -1,6 +1,6 @@
 <template>
 <div class="topnav">
-  <div class="logo"> 轱辘UI </div>
+  <div class="logo"> 白杨UI </div>
   <ul class="menu">
     <li>文档</li>
     <li>捐款</li>
@@ -21,7 +21,7 @@ export default {
       menuVisible.value = !menuVisible.value;
     };
     return {
-      handleHidden
+      handleHidden,
     };
   },
 };
