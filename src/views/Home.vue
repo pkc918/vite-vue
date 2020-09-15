@@ -1,50 +1,67 @@
 <template>
-  <div class="home">
-    <Topnav />
-    <div class="banner">
-      <div class="logo"></div>
-      <div class="intro">
-        <h1>轱辘UI</h1>
-        <h2>基于 Vue 3 和 TypeScript 的 UI 框架</h2>
-        <div class="links">
-          <a href="https://github.com/XiaoPan-Struggle/vite-vue">GitHub</a>
-          <router-link to="/doc">起步</router-link>
-        </div>
+<div class="home topnavAndBanner">
+  <Topnav />
+  <div class="banner">
+    <div class="logo"></div>
+    <div class="intro">
+      <h1>白杨 UI</h1>
+      <h3>基于 Vue 3 和 TypeScript 的 UI 框架</h3>
+      <div class="links">
+        <a href="https://github.com/XiaoPan-Struggle/vite-vue">GitHub</a>
+        <router-link to="/doc">开始使用</router-link>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 import Topnav from '../components/Topnav.vue';
 export default {
-  components: { Topnav },
+  components: {
+    Topnav
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.topnavAndBanner {
+  background: rgb(243, 250, 254);
+  background: linear-gradient(145deg,
+      rgba(243, 250, 254, 1) 0%,
+      rgba(243, 249, 255, 1) 100%);
+}
+
 .home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 50vh;
+
   .intro {
     padding: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    h1 {
+      font-weight: 600;
+    }
+
     .links {
-      padding-top: 20px;
+      padding-top: 30px;
+
       a {
-        $h: 28px;
-        display: inline-block;
-        margin: 0 20px;
+        margin: 20px 20px;
         padding: 8px 20px;
-        border-radius: $h;
-        border: 1px solid #4fc08d;
-        background-color: #f6f6f6;
-        line-height: $h;
+        border: 1px solid #0f78fe;
+        border-radius: 10px;
         font-weight: 600;
+
+        &:nth-child(2) {
+          background-color: #0f78fe;
+          color: #fff;
+        }
       }
     }
   }
