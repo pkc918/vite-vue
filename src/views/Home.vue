@@ -1,16 +1,29 @@
 <template>
-<div class="home topnavAndBanner">
-  <Topnav />
-  <div class="banner">
-    <div class="logo"></div>
-    <div class="intro">
-      <h1>白杨 UI</h1>
-      <h3>基于 Vue 3 和 TypeScript 的 UI 框架</h3>
-      <div class="links">
-        <a href="https://github.com/XiaoPan-Struggle/vite-vue">GitHub</a>
-        <router-link to="/doc">开始使用</router-link>
+<div>
+  <div class="home topnavAndBanner">
+    <Topnav />
+    <div class="banner">
+      <div class="logo"></div>
+      <div class="intro">
+        <h1>白杨 UI</h1>
+        <h3>基于 Vue 3 和 TypeScript 的 UI 框架</h3>
+        <div class="links">
+          <a href="https://github.com/XiaoPan-Struggle/vite-vue">GitHub</a>
+          <router-link to="/doc">开始使用</router-link>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-vue"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-ts"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-light"></use>
+    </svg>
   </div>
 </div>
 </template>
@@ -32,10 +45,16 @@ export default {
       rgba(243, 249, 255, 1) 100%);
 }
 
+.features {
+  >svg {
+    width: 88px;
+    height: 88px;
+  }
+}
+
 .home {
   display: flex;
   flex-direction: column;
-  height: 50vh;
 
   .intro {
     padding: 100px 0;

@@ -1,6 +1,10 @@
 <template>
 <div class="topnav">
-  <div class="logo"> 白杨UI </div>
+  <div class="logo">
+    <svg class="icon">
+      <use xlink:href="#icon-baiyang"></use>
+    </svg>
+  </div>
   <ul class="menu">
     <li>文档</li>
     <li>捐款</li>
@@ -37,10 +41,16 @@ export default {
   z-index: 10;
 
   >.logo {
+    padding: 0 20px;
     font-size: 24px;
     font-weight: 600;
     max-width: 6em;
     margin-right: auto;
+
+    >svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   >.menu {
