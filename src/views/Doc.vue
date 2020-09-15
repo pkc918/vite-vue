@@ -1,39 +1,46 @@
 <template>
-  <div class="docMain">
-    <Topnav />
-    <div class="content">
-      <aside v-show="menuVisible">
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
-          </li>
-        </ol>
-      </aside>
-      <main>
-        <router-view></router-view>
-      </main>
-    </div>
+<div class="docMain">
+  <Topnav toggleMenuVisible />
+  <div class="content">
+    <aside v-show="menuVisible">
+      <h2>组件列表</h2>
+      <ol>
+        <li>
+          <router-link to="/doc/switch">Switch 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/button">Button 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/dialog">Dialog 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/tabs">Tabs 组件</router-link>
+        </li>
+      </ol>
+    </aside>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
+</div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import {
+  inject,
+  Ref
+} from "vue";
 import Topnav from "../components/Topnav.vue";
 export default {
-  components: { Topnav },
+  components: {
+    Topnav
+  },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible");
-    return { menuVisible };
+    const menuVisible = inject < Ref < boolean >> ("menuVisible");
+    return {
+      menuVisible
+    };
   },
 };
 </script>
@@ -41,29 +48,36 @@ export default {
 <style lang="scss">
 #app {
   height: 100%;
-  > div {
+
+  >div {
     height: 100%;
-    > .docMain {
+
+    >.docMain {
       height: 100%;
     }
   }
 }
+
 .content {
   display: flex;
   height: 100%;
-  > aside {
+
+  >aside {
     width: 150px;
     padding: 16px;
     background-color: pink;
     z-index: 1;
-    > h2 {
+
+    >h2 {
       margin-bottom: 4px;
     }
-    > ol {
-      > li {
+
+    >ol {
+      >li {
         padding: 4px 0;
       }
     }
+
     @media (max-width: 500px) {
       position: fixed;
       top: 0;
@@ -71,7 +85,8 @@ export default {
       padding-top: 70px;
     }
   }
-  > main {
+
+  >main {
     width: 100%;
     padding: 10px;
     background-color: #fff;

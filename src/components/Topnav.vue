@@ -10,7 +10,7 @@
       <router-link to="/doc">文档</router-link>
     </li>
   </ul>
-  <span class="toggleAside" @click="handleHidden"></span>
+  <span v-if="toggleMenuVisible" class="toggleAside" @click="handleHidden"></span>
 </div>
 </template>
 
@@ -20,6 +20,12 @@ import {
   Ref
 } from "vue";
 export default {
+  props: {
+    toggleMenuVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const menuVisible = inject < Ref < boolean >> ("menuVisible");
     const handleHidden = () => {
