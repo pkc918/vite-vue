@@ -6,8 +6,9 @@
     </svg>
   </div>
   <ul class="menu">
-    <li>文档</li>
-    <li>捐款</li>
+    <li>
+      <router-link to="/doc">文档</router-link>
+    </li>
   </ul>
   <span class="toggleAside" @click="handleHidden"></span>
 </div>
