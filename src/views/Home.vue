@@ -43,6 +43,7 @@ export default {
   background: linear-gradient(145deg,
       rgba(243, 250, 254, 1) 0%,
       rgba(243, 249, 255, 1) 100%);
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 
 .features {
