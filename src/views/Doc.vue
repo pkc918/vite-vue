@@ -34,65 +34,74 @@ import {
 import Topnav from "../components/Topnav.vue";
 export default {
   components: {
-    Topnav
+    Topnav,
   },
   setup() {
     const menuVisible = inject < Ref < boolean >> ("menuVisible");
     return {
-      menuVisible
+      menuVisible,
     };
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  height: 100%;
+.docMain {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 
-  >div {
-    height: 100%;
+  >.nav {
+    flex-shrink: 0;
+  }
 
-    >.docMain {
-      height: 100%;
+  >.content {
+    flex-grow: 1;
+    padding-top: 60px;
+    padding-left: 156px;
+
+    @media (max-width: 500px) {
+      padding-left: 0;
     }
   }
 }
 
 .content {
   display: flex;
-  height: 100%;
+  text-align: left;
 
   >aside {
-    width: 150px;
-    padding: 16px;
-    background-color: pink;
-    z-index: 1;
-
-    >h2 {
-      margin-bottom: 4px;
-    }
-
-    >ol {
-      >li {
-        padding: 4px 0;
-      }
-    }
-
-    @media (max-width: 500px) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 70px;
-    }
+    flex-shrink: 0;
   }
 
   >main {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    text-align: left;
-    font-size: 24px;
-    overflow-y: auto;
+    flex-grow: 1;
+    padding: 16px;
   }
+}
+
+aside {
+  background: lightblue;
+  width: 150px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
+  height: 100%;
+
+  >h2 {
+    margin-bottom: 4px;
+  }
+
+  >ol {
+    >li {
+      padding: 4px 0;
+    }
+  }
+}
+
+main {
+  overflow: auto;
 }
 </style>
