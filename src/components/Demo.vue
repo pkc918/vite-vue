@@ -1,6 +1,6 @@
 <template>
 <div class="demo">
-  <h2>支持 disabled</h2>
+  <h2>{{ component.__sourceCodeTitle }}</h2>
   <div class="demo-component">
     <component :is="Switch2Demo"></component>
   </div>
