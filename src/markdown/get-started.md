@@ -8,7 +8,7 @@
 import {Button, Tabs, Switch, Dialog} from "by-ui"
 ```
 
-就可以使用我提供的组件了。
+就可以使用我的组件了。
 
 ## Vue 单文件组件
 
