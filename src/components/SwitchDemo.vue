@@ -1,4 +1,4 @@
-<template>
+<template lang="">
 <div>
   <h1>Switch 组件示例</h1>
   <div class="demo">
@@ -6,9 +6,7 @@
     <div class="demo-component">
       <Switch1Demo></Switch1Demo>
     </div>
-    <div class="demo-actions">
-      <Button>查看代码</Button>
-    </div>
+    <div class="demo-actions"> <Button>查看代码</Button> </div>
     <div class="demo-code">
       <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
     </div>
@@ -22,7 +20,8 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+      <pre>&lt;Switch
+  v-model:value="bool" disabled /&gt;</pre>
     </div>
   </div>
 </div>
