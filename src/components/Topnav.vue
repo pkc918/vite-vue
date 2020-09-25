@@ -1,24 +1,21 @@
 <template>
-<div class="topnav">
-  <router-link to="/" class="logo">
-    <svg class="icon">
-      <use xlink:href="#icon-baiyang"></use>
-    </svg>
-  </router-link>
-  <ul class="menu">
-    <li>
-      <router-link to="/doc">文档</router-link>
-    </li>
-  </ul>
-  <span v-if="toggleMenuVisible" class="toggleAside" @click="handleHidden"></span>
-</div>
+  <div class="topnav">
+    <router-link to="/" class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-baiyang"></use>
+      </svg>
+    </router-link>
+    <ul class="menu">
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
+    </ul>
+    <span v-if="toggleMenuVisible" class="toggleAside" @click="handleHidden"></span>
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  inject,
-  Ref
-} from "vue";
+import { inject, Ref } from "vue";
 export default {
   props: {
     toggleMenuVisible: {
@@ -27,7 +24,7 @@ export default {
     },
   },
   setup() {
-    const menuVisible = inject < Ref < boolean >> ("menuVisible");
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     const handleHidden = () => {
       menuVisible.value = !menuVisible.value;
     };
@@ -48,32 +45,32 @@ export default {
   width: 100%;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 50;
 
-  >.logo {
+  > .logo {
     padding: 0 20px;
     font-size: 24px;
     font-weight: 600;
     max-width: 6em;
     margin-right: auto;
 
-    >svg {
+    > svg {
       width: 40px;
       height: 40px;
     }
   }
 
-  >.menu {
+  > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
 
-    >li {
+    > li {
       margin: 0 1em;
     }
   }
 
-  >.toggleAside {
+  > .toggleAside {
     display: none;
     width: 24px;
     height: 24px;
@@ -86,15 +83,15 @@ export default {
   }
 
   @media (max-width: 500px) {
-    >.menu {
+    > .menu {
       display: none;
     }
 
-    >.logo {
+    > .logo {
       margin: 0 auto;
     }
 
-    >.toggleAside {
+    > .toggleAside {
       display: inline-block;
     }
   }
