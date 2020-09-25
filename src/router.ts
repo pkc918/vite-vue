@@ -11,11 +11,14 @@ import TabsDemo from './components/TabsDemo.vue'
 import { h } from 'vue'
 
 const history = createWebHashHistory()
+
+// md渲染路径传参
 const md = (fileName) =>
   h(Markdown, {
     path: `../markdown/${fileName}`,
     key: fileName,
   })
+
 export const router = createRouter({
   history: history,
   routes: [
