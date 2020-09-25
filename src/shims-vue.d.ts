@@ -4,3 +4,9 @@ declare module '*.vue' {
   const componentOptions: ComponentOptions
   export default componentOptions
 }
+
+// xxx.md
+declare module '*.md' {
+  const str: string
+  export default str
+}

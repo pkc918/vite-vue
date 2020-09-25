@@ -2,6 +2,9 @@ import { createWebHashHistory, createRouter } from 'vue-router'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
 import Markdown from './components/Markdown.vue'
+import intro from './markdown/intro.md'
+import getStarted from './markdown/get-started.md'
+import install from './markdown/install.md'
 
 import SwitchDemo from './components/SwitchDemo.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
@@ -12,10 +15,10 @@ import { h } from 'vue'
 const history = createWebHashHistory()
 
 // md渲染路径传参
-const md = (fileName) =>
+const md = (string) =>
   h(Markdown, {
-    path: `../markdown/${fileName}`,
-    key: fileName,
+    content: string,
+    key: string,
   })
 
 export const router = createRouter({
@@ -29,15 +32,15 @@ export const router = createRouter({
         { path: '', redirect: '/doc/intro' },
         {
           path: 'intro',
-          component: md('intro.md'),
+          component: md(intro),
         },
         {
           path: 'get-start',
-          component: md('get-started.md'),
+          component: md(getStarted),
         },
         {
           path: 'install',
-          component: md('install.md'),
+          component: md(install),
         },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
