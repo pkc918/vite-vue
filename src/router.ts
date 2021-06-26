@@ -5,6 +5,7 @@ import Markdown from './components/Markdown.vue'
 import intro from './markdown/intro.md'
 import getStarted from './markdown/get-started.md'
 import install from './markdown/install.md'
+import projectSummary from './markdown/projectSummary.md'
 
 import SwitchDemo from './components/SwitchDemo.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
@@ -41,6 +42,10 @@ export const router = createRouter({
         {
           path: 'install',
           component: md(install),
+        },
+        {
+          path: 'projectSummary',
+          component: md(projectSummary),
         },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },

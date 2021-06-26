@@ -40,6 +40,8 @@ export default {
   display: flex;
   padding: 16px;
   position: fixed;
+  border-bottom: 1px solid #888;
+  background: #000;
   top: 0;
   left: 0;
   width: 100%;

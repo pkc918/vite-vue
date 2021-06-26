@@ -1,12 +1,19 @@
 <template>
 <div class="gulu-tabs">
   <div class="gulu-tabs-nav" ref="container">
-    <div class="gulu-tabs-nav-item" :class="{selected: t===selected}" v-for="(t,index) in titles" :key="index" :ref=" el => { if(t===selected) selectedItem = el }" @click="select(t)">{{t}}
+    <div class="gulu-tabs-nav-item" 
+      :class="{selected: t===selected}" 
+      v-for="(t,index) in titles" 
+      :key="index" 
+      :ref=" el => { if(t===selected) selectedItem = el }" 
+      @click="select(t)">{{t}}
     </div>
     <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
   </div>
   <div class="gulu-tabs-content">
-    <component class="gulu-tabs-content-item" :class="{selected: c.props.title === selected}" v-for="(c,index) in defaults" :is="c" :key="index" />
+    <component 
+      class="gulu-tabs-content-item"
+      :is="current" :key="index" />
   </div>
 </div>
 </template>
@@ -33,6 +40,7 @@ export default {
       const {
         width
       } = selectedItem.value.getBoundingClientRect();
+      console.log(selectedItem.value.getBoundingClientRect())
       indicator.value.style.width = width + "px";
       const {
         left: navLeft
@@ -48,10 +56,14 @@ export default {
     });
 
     const defaults = context.slots.default();
+    console.log(defaults[0])
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw new Error("Tabs 子标签必须是 Tab");
       }
+    });
+    const current = computed(() => {
+      return defaults.find(tag => tag.props.title === props.selected)
     });
     const titles = defaults.map((tag) => {
       return tag.props.title;
@@ -63,6 +75,7 @@ export default {
       defaults,
       titles,
       select,
+      current,
       selectedItem,
       indicator,
       container,

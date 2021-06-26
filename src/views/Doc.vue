@@ -29,6 +29,9 @@
         <li>
           <router-link to="/doc/tabs">Tabs 组件</router-link>
         </li>
+        <li>
+          <router-link to="/doc/projectSummary">项目总结</router-link>
+        </li>
       </ol>
     </aside>
     <main>
@@ -71,7 +74,7 @@ $aside-zindex: 30;
 
   >.content {
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 80px;
     padding-left: 156px;
 
     @media (max-width: 500px) {
@@ -99,7 +102,7 @@ aside {
   width: 150px;
   padding: 16px 0;
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   padding-top: 70px;
   height: 100%;
