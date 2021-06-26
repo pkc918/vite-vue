@@ -54,9 +54,10 @@ export default {
 </script>
 
 <style lang="scss">
-$border-color: #d9d9d9;
+$border-color: rgba(0,0,0,.3);
 
 .demo {
+  width: 800px;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
 

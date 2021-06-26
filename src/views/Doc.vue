@@ -75,7 +75,7 @@ $aside-zindex: 30;
   >.content {
     flex-grow: 1;
     padding-top: 80px;
-    padding-left: 156px;
+    padding-left: 200px;
 
     @media (max-width: 500px) {
       padding-left: 0;
@@ -98,13 +98,12 @@ $aside-zindex: 30;
 }
 
 aside {
-  background: lightblue;
-  width: 150px;
-  padding: 16px 0;
+  background: #fafafa;
+  width: 200px;
+  padding: 30px 20px;
   position: fixed;
   top: 80px;
   left: 0;
-  padding-top: 70px;
   height: 100%;
   z-index: $aside-zindex;
 
@@ -122,7 +121,7 @@ aside {
       }
 
       .router-link-active {
-        background: white;
+        color: #00d16c;
       }
     }
   }
@@ -130,5 +129,6 @@ aside {
 
 main {
   overflow: auto;
+  margin: 0 100px;
 }
 </style>

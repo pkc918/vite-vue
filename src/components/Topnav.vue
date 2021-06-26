@@ -1,11 +1,20 @@
 <template>
-  <div class="topnav">
+  <div
+      class="topnav"
+      :class="{selected: !isShow}"
+  >
     <router-link to="/" class="logo">
       <svg class="icon">
         <use xlink:href="#icon-baiyang"></use>
       </svg>
     </router-link>
     <ul class="menu">
+      <li>
+        <a target="_blank" href="https://github.com/XiaoPan-Struggle/vite-vue">Github</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.yuque.com/u5019886/dylh6b/cgq2dh">语雀</a>
+      </li>
       <li>
         <router-link to="/doc">文档</router-link>
       </li>
@@ -15,7 +24,8 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import {inject, ref, Ref} from 'vue';
+import {useRoute} from 'vue-router';
 export default {
   props: {
     toggleMenuVisible: {
@@ -24,12 +34,15 @@ export default {
     },
   },
   setup() {
+    const isShow = ref(false);
+    isShow.value = useRoute().path === '/'
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const handleHidden = () => {
       menuVisible.value = !menuVisible.value;
     };
     return {
       handleHidden,
+      isShow
     };
   },
 };
@@ -40,8 +53,6 @@ export default {
   display: flex;
   padding: 16px;
   position: fixed;
-  border-bottom: 1px solid #888;
-  background: #000;
   top: 0;
   left: 0;
   width: 100%;
@@ -76,12 +87,11 @@ export default {
     display: none;
     width: 24px;
     height: 24px;
-    background-color: black;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: url(/img/unfold.png) no-repeat center;
+    background: url("../../public/img/unfold.png") no-repeat center;
   }
 
   @media (max-width: 500px) {
@@ -98,4 +108,11 @@ export default {
     }
   }
 }
+
+.selected{
+  background: #fff;
+  box-shadow: #6a737d 1px 3px 5px;
+}
+
+
 </style>
