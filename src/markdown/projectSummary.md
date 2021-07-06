@@ -13,7 +13,7 @@
 
 > Switch 源代码
 
-![](./src/assets\switch.png)
+![](./public/img/switch.png)
 
 接收外面一个 value（布尔值） 值，用来控制开关。
 
@@ -42,7 +42,7 @@ Tips：如果更新 value 值，事件名写成 update: value ，这时候，外
 
 > Button源码
 
-![](./src/assets/button.png)
+![](./public/img/button.png)
 
 通过使用该组件，然后属性传值，根据不同值实现不同效果。
 
@@ -76,7 +76,7 @@ cancel：点击cancel时调用的API。
 
 > Dialog源码
 
-![](./src/assets/dialog.png)
+![](./public/img/dialog.png)
 
 该组件标题内容用户自定义使用插槽，控制显示隐藏，暴露一个点击确认的API和一个点击取消的API。
 
@@ -103,7 +103,7 @@ const showDialog = () => {
 
 > 使用 h 函数渲染组件
 
-![](./src/assets/一键dialog.png)
+![](./public/img/dialog1.png)
 
 ### Tabs 组件
 
@@ -124,14 +124,14 @@ const x = ref('导航1')
 
 > Tabs 源码
 
-![](./src/assets/Tabs.png)
+![](./public/img/Tabs.png)
 
 - 子组件 tab 打印是一个对象，context.slots.default() 得到一个数组，数组里有一个或多个对象，是里面的子组件，每一个对象里有一个 type 属性和引用的文件全等。
 - 使用 (context.slots.default())[0].props 可以获取子组件的 props 值，使用了 title来表示是否选中。
 - 使用 css 控制显示和隐藏，使用 ref.value.getBoundingClientRect() 获取元素最新的位置信息以及大小。
 - 使用 vue3 内置的动态组件 components ，就可以不使用 css 来展示内容了，在使用 components 时，也要加上 key 才会有更新。如下：
 
-![components](./src/assets/components.png)
+![components](./public/img/components.png)
 
 这就是本项目暂时开发的组件啦！
 
