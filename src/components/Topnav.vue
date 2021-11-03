@@ -91,7 +91,7 @@ export default {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: url("../../public/img/unfold.png") no-repeat center;
+    background: url("/public/img/unfold.png") no-repeat center;
   }
 
   @media (max-width: 500px) {
