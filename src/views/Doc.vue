@@ -79,6 +79,10 @@ $aside-zindex: 30;
 
     @media (max-width: 500px) {
       padding-left: 0;
+
+      main{
+        margin: 0;
+      }
     }
   }
 }
