@@ -23,9 +23,6 @@ import Button from '../lib/Button.vue'
 import {
   ref
 } from 'vue'
-import {
-  openDialog
-} from '../lib/openDialog'
 export default {
   components: {
     Dialog,
@@ -37,9 +34,11 @@ export default {
       x.value = !x.value
     }
     const f1 = () => {
-      return false
+      console.log('ok')
     }
-    const f2 = () => {}
+    const f2 = () => {
+      console.log("cancel")
+    }
     return {
       x,
       toggleVisible,
